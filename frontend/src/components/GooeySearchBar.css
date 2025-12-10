@@ -1,0 +1,75 @@
+.gooey-container {
+  filter: url(#goo);
+  padding: 100px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.search-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 60px;
+  padding: 12px 24px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  width: 500px;
+  max-width: 90vw;
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  font-size: 1.3rem;
+  flex: 1;
+  padding: 10px;
+}
+
+.mic-button {
+  background: #ff4081;
+  color: white;
+  border: none;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  margin-left: 12px;
+}
+
+.mic-button.recording {
+  background: #f44336;
+  animation: pulse 1.5s infinite;
+  transform: scale(1.1);
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+.transcription-result {
+  margin-top: 40px;
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(10px);
+  padding: 20px 30px;
+  border-radius: 20px;
+  color: white;
+  font-size: 1.4rem;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.gooey-filter {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
