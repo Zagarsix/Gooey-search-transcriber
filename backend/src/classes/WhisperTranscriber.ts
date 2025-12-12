@@ -34,6 +34,9 @@ export class WhisperTranscriber extends AudioCompressor {
       const transcription = await openai.audio.transcriptions.create({
         file: fs.createReadStream(finalAudioPath) as any,
         model: 'whisper-1',
+        language: 'es', // Especificar el idioma español
+        temperature: 0, // Menor temperatura para mayor precisión
+        prompt: 'Transcribe el audio en español de la mejor manera posible.',
       });
       console.log('Transcripción exitosa:', transcription.text);
 
