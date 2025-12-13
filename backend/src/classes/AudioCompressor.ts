@@ -3,7 +3,7 @@ import { AudioHandler } from './AudioHandler';
 import * as path from 'path';
 import * as fs from 'fs';
 
-ffmpeg.setFfmpegPath('C:\\ffmpeg\\bin\\ffmpeg.exe');
+ffmpeg.setFfmpegPath(process.env.BIN_FFMPEG || 'ffmpeg');
 
 export class AudioCompressor extends AudioHandler {
   async processAudio(inputPath: string): Promise<string> {

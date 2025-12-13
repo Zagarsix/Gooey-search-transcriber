@@ -1,0 +1,22 @@
+{
+  "name": "monorepo-audio-recorder",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "start:backend": "cd backend && npm install && npm start",
+    "start:frontend": "cd frontend && npm install && npm start",
+    "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
+
+
+    "dev:backend": "cd backend && npm install && npm run dev",
+    "dev:frontend": "cd frontend && npm install && npm run dev",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\""
+  },
+  "dependencies": {
+    "concurrently": "^9.2.1"
+  }
+}

@@ -24,7 +24,7 @@ export default function GooeySearchBar() {
       formData.append('audio', blob, 'voice.webm');
 
       try {
-        const res = await fetch('http://localhost:5000/transcribe', {
+        const res = await fetch(import.meta.env.VITE_BACKEND_HOST+'/transcribe', {
           method: 'POST',
           body: formData,
         });

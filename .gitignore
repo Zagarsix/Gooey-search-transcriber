@@ -2,7 +2,7 @@
 node_modules/
 
 # Ignorar archivos sensibles
-backend/.env
+.env
 
 # Ignorar temporales
 backend/uploads/*
