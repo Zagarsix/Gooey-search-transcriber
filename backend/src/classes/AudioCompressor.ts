@@ -1,9 +1,10 @@
 import ffmpeg from 'fluent-ffmpeg';
+import ffmpegPath from 'ffmpeg-static';  
 import { AudioHandler } from './AudioHandler';
 import * as path from 'path';
 import * as fs from 'fs';
 
-ffmpeg.setFfmpegPath('C:\\ffmpeg\\bin\\ffmpeg.exe');
+ffmpeg.setFfmpegPath(ffmpegPath as string);
 
 export class AudioCompressor extends AudioHandler {
   async processAudio(inputPath: string): Promise<string> {
