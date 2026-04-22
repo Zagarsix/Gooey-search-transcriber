@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
 import { AudioRecorder } from './AudioRecorder';
+import { API_URL } from '../config';
 import './GooeySearchBar.css';
 
 export default function GooeySearchBar() {
@@ -24,7 +25,7 @@ export default function GooeySearchBar() {
       formData.append('audio', blob, 'voice.webm');
 
       try {
-        const res = await fetch('http://localhost:5000/transcribe', {
+        const res = await fetch(`${API_URL}/transcribe`, {
           method: 'POST',
           body: formData,
         });
