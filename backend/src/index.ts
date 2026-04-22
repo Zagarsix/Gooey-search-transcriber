@@ -8,7 +8,9 @@ import * as fs from 'fs';
 const app = express();
 const upload = multer({ dest: 'uploads/' });
 
-app.use(cors());
+app.use(cors({
+  origin: "*",
+}));
 app.use(express.json());
 
 // Ruta principal de prueba
